@@ -1,19 +1,29 @@
-import React, { Component } from 'react';
-import { StyleSheet, Image, Text, View, Button } from 'react-native';
+import React, {Component} from 'react';
+import {
+  StyleSheet,
+  Image,
+  Text,
+  View,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
 
 class Home extends Component {
   render() {
-    let imagePath = { uri: 'https://icons.iconarchive.com/icons/alecive/flatwoken/512/Apps-Accessories-Media-Converter-icon.png', };
+    let imagePath = {
+      uri: 'https://mobile.softpedia.com/screenshots/icon_Unit-Converter-by-Kanasz-Robert-Windows-Phone.jpg',
+    };
     return (
       <View style={styles.container}>
-        <Text style={styles.font}> Welcome to Unit Converter </Text>
-        <Image source={imagePath} style={{ width: 130, height: 130 }} />
+        <Text style={styles.font}> unit Converter </Text>
+        <Image source={imagePath} style={styles.image} />
         <View style={styles.button}>
-          <Button title='Start' color='#e00d73'
-            onPress={() => this.props.navigation.navigate('Unit convertor')} />
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Unit convertor')}>
+            <Text style={styles.start}>START</Text>
+          </TouchableOpacity>
         </View>
       </View>
-
     );
   }
 }
@@ -25,15 +35,33 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   font: {
-    fontSize: 30,
+    fontSize: 40,
     textAlign: 'center',
-    margin: 30,
-    color: '#e04c0d',
+    marginBottom: 40,
+    color: 'white',
     fontWeight: 'bold',
+    fontStyle: 'italic',
+    backgroundColor: '#182c45',
   },
   button: {
-    margin: 30
-
-  }
+    margin: 50,
+    height: 55,
+    width: 280,
+    borderRadius: 15,
+    backgroundColor: '#182c45',
+    justifyContent: 'center',
+    marginTop: 50,
+  },
+  start: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 25,
+  },
+  image: {
+    width: 260,
+    height: 260,
+    //margin: 20,
+  },
 });
 export default Home;
